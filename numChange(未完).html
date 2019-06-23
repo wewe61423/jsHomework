@@ -1,0 +1,49 @@
+<script>
+
+    function unitAction(){
+        
+    let inputNum = document.getElementById('inputNum').value;
+    let chineseNumber = new Array('零', '壹', '貳', '參', '肆', '伍', '陸', '柒', '捌', '玖');
+    let unit = new Array('', '圓', '拾', '佰', '仟'); //元是單位
+    let unit_spec = new Array('', '拾', '佰', '仟'); //元是單位 破千用的
+    let result = '';
+    let thisNum;
+    let checkNum = true;
+
+        for (i = inputNum.length - 1; i >= 0; i--) {
+            thisNum = inputNum.substr(i, 1);    //取 inputNum 從 i 位置取一個值
+            if (inputNum.length - i == 5 && checkNum) {     //若到第五位數，則輸出萬字
+                if(inputNum.substr(i-1, 1) == 0 && inputNum.substr(i-2, 1) == 0 && inputNum.substr(i-3, 1) == 0) {     //若到第九位數，則輸出億字
+                    result = '億' + result;
+                }else{
+                    result = '萬' + result;
+                }
+                checkNum = false;
+            }
+            if (inputNum.length - i == 9 && checkNum) {     //若到第九位數，則輸出億字
+                result = '億' + result;
+                checkNum = false;
+            }
+            
+            if (thisNum == 0 && inputNum.substr(i + 1, 1) == 0) {            
+                continue;                       //判斷若輸入值個位數 & 十位數皆為零，不繼續執行以下敘述
+            }
+            if (thisNum != 0) {
+                if ((inputNum.length - i) < 5) {
+                    result = unit[(inputNum.length - i) % 5] + result;  
+
+                } else {
+                    result = unit_spec[(inputNum.length - i - 1) % 4] + result;
+                }
+            }
+            checkNum = true;
+            result = chineseNumber[thisNum] +　result;
+            document.getElementById("result").innerHTML = result;
+        }
+    console.log(result);
+    }
+    
+</script>
+<input type="number" id="inputNum" />
+<input type="button" id="submit" value="轉換" onclick="unitAction()"/>
+<span id="result"></span>

@@ -1,0 +1,42 @@
+<script>
+    function genderAction(){
+        let genderPrint = gender.selectedIndex;  //已選擇 selet 的 index 為多少
+        let num1 = 0;
+        switch (genderPrint){ //將 select 的加減乘除進行個別輸出
+            case 0:     //不指定
+                num1 = parseInt(Math.random()*2+1);         //第一碼需要為數字 1 or 2
+                break;
+            case 1:     //男性
+                num1 = "1";        
+                break;
+            case 2:     //女性
+                num1 = "2";
+                break;
+        }
+        let a = ["A","B","C","D","E","F","G","H","I","J","K","M","N","O","P","Q","T","U","V","w","X","Z"];  
+        //L,R,S,Y 代碼已停用
+        let idNum = parseInt(Math.random()*a.length);   //亂數產生英文
+        let num2 = parseInt(Math.random()*8);           //第二碼至第九碼需為數字 1 ~ 9
+        let num3 = parseInt(Math.random()*8);
+        let num4 = parseInt(Math.random()*8);
+        let num5 = parseInt(Math.random()*8);
+        let num6 = parseInt(Math.random()*8);
+        let num7 = parseInt(Math.random()*8);
+        let num8 = parseInt(Math.random()*8);
+        let num9 = parseInt(Math.random()*8);
+        document.getElementById('outPutId3').value = a[idNum] + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+    
+    }
+    </script>
+    <html>
+    <p>測試身分證隨機產生器</p>
+    <input type="text" id="outPutId3" class="outPutId3" value="身分證隨機產生的地方" /> 
+    <select id="gender">
+            <option>-不指定性別-</option>
+            <option>男性 Male</option>
+            <option>女性 Female</option>
+    </select>
+    <input type="button" id="idRandomSubmin3" class="idSubmin3" value="隨機產生" onclick="genderAction()"/>
+    <span id="result"></span>
+    </html>
+    

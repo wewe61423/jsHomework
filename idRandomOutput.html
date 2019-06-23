@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>身分證字號隨機產生器</title>
+    <style>
+        .idTitle{
+            font-family:Microsoft JhengHei;
+            color: #ff7f50;
+            font-weight: bolder;
+        }
+        .h2Title{
+            font-family:Microsoft JhengHei;
+            color: #ff7f50;
+            font-weight: bolder;
+        }
+        .idSubmin, .idSubmin2, .idSubmin3, .idSubmin4{
+            border-radius: 6px;
+            background-color: #e5bd8f;
+            font-family:Microsoft JhengHei;
+            width:80px;
+            height:30px;
+            font-weight: bolder;
+        }
+        .outPutId, .outPutId2, .outPutId3, .outPutId4{
+            font-family:Microsoft JhengHei;
+            vertical-align: middle; 
+            border: 1px solid #ff7f50;
+            height: 24px;
+            text-indent:4px;
+        }
+        #content{
+            margin: 2; 
+            padding: 0; 
+            height: 100%;
+            background-color: #504d4d;
+            padding:15px 20px;
+        }
+        #author{
+            font-family:Microsoft JhengHei;
+            text-align: left;  
+            color:#ffffff; 
+            opacity:0.1;
+        }
+        html,body { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            border:none; 
+            }
+        *{              
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+    <h2 class="h2Title">身分證字號隨機產生器</h2>
+    <table style="border:3px #ff7f50; border-style:solid;" cellpadding="10" >
+        <tr>
+            <td class="idTitle">
+                身分證隨機產生:
+            </td>
+            <td width=200px;>
+                <input type="text" id="outPutId" class="outPutId" /> 
+            </td>
+            <td>
+                <input type="button" id="idRandomSubmin" class="idSubmin" value="隨機產生" onclick="idAction()"/>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <h2 class="h2Title">身分證字號隨機產生器(可選城市)</h2>
+        <table style="border:3px #ff7f50; border-style:solid;" cellpadding="10" > 
+        <tr>
+            <td class="idTitle">
+                身分證隨機產生(可選城市版):
+                <p> --目前僅限四縣市</p>
+            </td>
+            <td width=160px;>
+                <input type="text" id="outPutId2" class="outPutId2" value="身分證隨機產生的地方" /> 
+            </td>
+            <td>
+                <select id="city">
+                    <option>-不指定城市-</option>
+                    <option>台北市</option>
+                    <option>台中市</option>
+                    <option>基隆市</option>
+                    <option>台南市</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" id="idRandomSubmin2" class="idSubmin2" value="隨機產生" onclick="cityAction()"/>
+            </td>
+            
+        </tr>
+        </table>
+        <br><br>
+        <h2 class="h2Title">身分證字號隨機產生器(可選性別)</h2>
+        <table style="border:3px #ff7f50; border-style:solid;" cellpadding="10" > 
+        <tr>
+            <td class="idTitle">
+                身分證隨機產生(可選性別版):
+            </td>
+            <td width=160px;>
+                <input type="text" id="outPutId3" class="outPutId3" value="身分證隨機產生的地方" /> 
+            </td>
+            <td>
+                <select id="gender">
+                    <option>-不指定性別-</option>
+                    <option>男性 Male</option>
+                    <option>女性 Female</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" id="idRandomSubmin3" class="idSubmin3" value="隨機產生" onclick="genderAction()"/>
+            </td>
+        </tr>
+        </table>
+        <br><br>
+
+        <h2 class="h2Title">身分證字號隨機產生器(可指定性別與城市)</h2>
+        <table style="border:3px #ff7f50; border-style:solid;" cellpadding="10" > 
+        <tr>
+            <td class="idTitle">
+                身分證隨機產生(可選性別版):
+            </td>
+            <td width=160px;>
+                <input type="text" id="outPutId4" class="outPutId4" value="身分證隨機產生的地方" /> 
+            </td>
+            <td>
+                <select id="gender2">
+                    <option>-不指定性別-</option>
+                    <option>男性 Male</option>
+                    <option>女性 Female</option>
+                </select>
+                <select id="city2">
+                    <option>-不指定城市-</option>
+                    <option>台北市</option>
+                    <option>台中市</option>
+                    <option>基隆市</option>
+                    <option>台南市</option>
+                    <option>高雄市</option>
+                    <option>新北市</option>
+                    <option>宜蘭縣</option>
+                    <option>桃園市</option>
+                    <option>嘉義市</option>
+                    <option>新竹縣</option>
+                    <option>苗栗縣</option>
+                    <option>南投縣</option>
+                    <option>彰化縣</option>
+                    <option>新竹市</option>
+                    <option>雲林縣</option>
+                    <option>嘉義縣</option>
+                    <option>屏東縣</option>
+                    <option>花蓮縣</option>
+                    <option>台東縣</option>
+                    <option>金門縣</option>
+                    <option>澎湖縣</option>
+                    <option>連江縣</option>
+                </select>
+            </td>
+            <td>
+                <input type="button" id="idRandomSubmin4" class="idSubmin4" value="隨機產生" onclick="genderAddCityAction()"/>
+            </td>
+        </tr>
+        </table>
+        <br>
+        <p id="author">2019 by Peggy_Chen</p>
+        
+    </div>
+
+    <script>
+        //純粹隨機輸出身分證字號
+        function idAction(){
+            let a = ["A","B","C","D","E","F","G","H","I","J","K","M","N","O","P","Q","T","U","V","W","X","Z"];  
+            //L,R,S,Y 代碼已停用
+            let idNum = parseInt(Math.random()*a.length);   //亂數產生英文
+            let num1 = parseInt(Math.random()*2+1);         //第一碼需要為數字 1 or 2
+            let num2 = parseInt(Math.random()*8);           //第二碼至第九碼需為數字 1 ~ 9
+            let num3 = parseInt(Math.random()*8);
+            let num4 = parseInt(Math.random()*8);
+            let num5 = parseInt(Math.random()*8);
+            let num6 = parseInt(Math.random()*8);
+            let num7 = parseInt(Math.random()*8);
+            let num8 = parseInt(Math.random()*8);
+            let num9 = parseInt(Math.random()*8);
+            document.getElementById('outPutId').value = a[idNum] + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+        }
+        //只可選城市
+        function cityAction(){
+            let cityPrint = city.selectedIndex;  //已選擇 selet 的 index 為多少
+            let idNum;   //亂數產生英文
+            switch (cityPrint){ //將 select 的加減乘除進行個別輸出
+                case 0:
+                    let a = ["A","B","C","D","E","F","G","H","I","J","K","M","N","O","P","Q","T","U","V","W","X","Z"]; 
+                    idNum = parseInt(Math.random()*a.length);   //亂數產生英文
+                    idNum = a[idNum];
+                    break;
+                case 1:
+                    idNum = "A";
+                    break;
+                case 2:
+                    idNum = "B";
+                    break;    
+                case 3:
+                    idNum = "C";
+                    break;    
+                case 4:
+                    idNum = "D";
+                    break;
+                
+            }
+            let num1 = parseInt(Math.random()*2+1);         //第一碼需要為數字 1 or 2
+            let num2 = parseInt(Math.random()*8);           //第二碼至第九碼需為數字 1 ~ 9
+            let num3 = parseInt(Math.random()*8);
+            let num4 = parseInt(Math.random()*8);
+            let num5 = parseInt(Math.random()*8);
+            let num6 = parseInt(Math.random()*8);
+            let num7 = parseInt(Math.random()*8);
+            let num8 = parseInt(Math.random()*8);
+            let num9 = parseInt(Math.random()*8);
+            document.getElementById('outPutId2').value = idNum + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+        }
+        //只可選性別
+        function genderAction(){
+        let genderPrint = gender.selectedIndex;  //已選擇 selet 的 index 為多少
+        let num1 = 0;
+        switch (genderPrint){ //將 select 的加減乘除進行個別輸出
+            case 0:     //不指定
+                num1 = parseInt(Math.random()*2+1);         //第一碼需要為數字 1 or 2
+                break;
+            case 1:     //男性
+                num1 = "1";        
+                break;
+            case 2:     //女性
+                num1 = "2";
+                break;
+        }
+        let a = ["A","B","C","D","E","F","G","H","I","J","K","M","N","O","P","Q","T","U","V","W","X","Z"];  
+        //L,R,S,Y 代碼已停用
+        let idNum = parseInt(Math.random()*a.length);   //亂數產生英文
+        let num2 = parseInt(Math.random()*8);           //第二碼至第九碼需為數字 1 ~ 9
+        let num3 = parseInt(Math.random()*8);
+        let num4 = parseInt(Math.random()*8);
+        let num5 = parseInt(Math.random()*8);
+        let num6 = parseInt(Math.random()*8);
+        let num7 = parseInt(Math.random()*8);
+        let num8 = parseInt(Math.random()*8);
+        let num9 = parseInt(Math.random()*8);
+        document.getElementById('outPutId3').value = a[idNum] + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+        }
+
+        //可選性別與城市
+        function genderAddCityAction(){
+        let cityPrint2 = city2.selectedIndex;     //已選擇 selet 的 index 為多少
+        let genderPrint2 = gender2.selectedIndex;  
+        let idNum;
+        let num1 = 0;
+        switch (cityPrint2){                     //將 select 的加減乘除進行個別輸出
+            case 0:
+                let a = ["A","B","C","D","E","F","G","H","I","J","K","M","N","O","P","Q","T","U","V","W","X","Z"]; 
+                idNum = parseInt(Math.random()*a.length);   //亂數產生英文
+                idNum = a[idNum];
+                break;
+            case 1:
+                idNum = "A";
+                break;
+            case 2:
+                idNum = "B";
+                break;    
+            case 3:
+                idNum = "C";
+                break;    
+            case 4:
+                idNum = "D";
+                break; 
+            case 5:
+                idNum = "E";
+                break;   
+            case 6:
+                idNum = "F";
+                break;  
+            case 7:
+                idNum = "G";
+                break; 
+            case 8:
+                idNum = "H";
+                break;
+            case 9:
+                idNum = "I";
+                break;       
+            case 10:
+                idNum = "J";
+                break; 
+            case 11:
+                idNum = "K";
+                break;
+            case 12:
+                idNum = "M";
+                break;
+            case 13:
+                idNum = "N";
+                break;
+            case 14:
+                idNum = "O";
+                break;
+            case 15:
+                idNum = "P";
+                break;
+            case 16:
+                idNum = "Q";
+                break;
+            case 17:
+                idNum = "T";
+                break;
+            case 18:
+                idNum = "U";
+                break;
+            case 19:
+                idNum = "V";
+                break;
+            case 20:
+                idNum = "W";
+                break;
+            case 21:
+                idNum = "X";
+                break;
+            case 22:
+                idNum = "Z";
+                break;    
+        }
+        switch (genderPrint2){ //將 select 的加減乘除進行個別輸出
+            case 0:     //不指定
+                num1 = parseInt(Math.random()*2+1);     //第一碼需要為數字 1 or 2
+                break;
+            case 1:     //男性
+                num1 = "1";        
+                break;
+            case 2:     //女性
+                num1 = "2";
+                break;
+        }
+        let num2 = parseInt(Math.random()*8);
+        let num3 = parseInt(Math.random()*8);
+        let num4 = parseInt(Math.random()*8);
+        let num5 = parseInt(Math.random()*8);
+        let num6 = parseInt(Math.random()*8);
+        let num7 = parseInt(Math.random()*8);
+        let num8 = parseInt(Math.random()*8);
+        let num9 = parseInt(Math.random()*8);
+        document.getElementById('outPutId4').value = idNum + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+        }
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .subminNum{
+        border-radius: 5px;
+        background-color: #22ca92;
+        font-family:Microsoft JhengHei;
+        width:80px;
+        height:30px;
+        font-weight: bolder;
+    }
+    .bodyTitle{
+        font-family:Microsoft JhengHei; 
+        font-size:22px; 
+        font-weight:bold;
+        color: #22ca92;
+    }
+    .tableStyle{
+        border:2px #22ca92; 
+        border-style:solid;
+        empty-cells: show;
+    }
+    .caption{
+        font-family:Microsoft JhengHei;
+        color:#22ca92;
+    }
+    #result{
+        font-family:Microsoft JhengHei; 
+        font-weight:bold;
+        color:#3eb9df
+    }
+    #content{
+            margin: 0; 
+            padding: 0; 
+            height: 100%;
+            background-color: #504d4d;
+            padding:15px 20px;
+    }
+    #author{
+            font-family:Microsoft JhengHei;
+            text-align: left;  
+            color:#ffffff; 
+            opacity:0.1;
+    }
+    html, body{
+        margin: 0;
+        height: 100%;
+    }
+    *{
+        margin: 0;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>質數判斷</title>
+</head>
+
+<body>
+    <div id="content">
+    <p class="bodyTitle">質數的判斷</p>
+    <br>
+    <table class="tableStyle" cellpadding="10">
+        <tr>
+            <td>
+                <span class="caption">請輸入任一數字 </span>
+                <input type="number" id="inputNum" />
+                <input type="button" id="submitNum" class="subminNum" value="是否為質數" onclick="checkNum(this)" />
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <span id="result" ></span>
+        </td>
+        </tr>
+    </table>
+    <br>
+    <p id="author">2019 by Peggy_Chen</p>
+    </div>
+
+    <script>
+    //驗證欄位不得為空值
+    //利用輸入欄位，判斷內容的數字是否為質數
+    //質數驗證: (1)大於數字 1 。(2)除了 1 無法被其他數字整除的數字
+    let primeNumber;
+    function checkNum(){
+        let inputNum = document.getElementById('inputNum').value;
+        let checkType = true;
+        
+        for (let i=2; i<inputNum; i++){
+            if (inputNum % i ==0){  //輸入的值會被整除，餘數為 0，就不是質數
+                document.getElementById("result").innerHTML = "確認結果為: 不是質數"; 
+                checkType = false;
+            }
+        }
+            if (inputNum == ""){
+                document.getElementById("result").innerHTML = "嗨嗨~欄位不得為空，請輸入數字!"; 
+            }else if (checkType){
+                document.getElementById("result").innerHTML = "確認結果為: 是質數!"; 
+        }
+    } 
+    </script>
+    
+</body>
+
+</html>

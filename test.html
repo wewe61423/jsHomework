@@ -1,0 +1,64 @@
+<script>
+    
+    function action(){
+        let inputNum = document.getElementById('inputNum').value;
+        result.innerHTML =(inputNum);
+    }
+    
+
+
+function myFunction() {
+    var str = document.getElementById("demo").innerHTML;  
+    var res = str.replace(str,"W3Schools"); //全部取代 str 的內容
+    document.getElementById("demo").innerHTML = res;
+    
+    var str2 = document.getElementById("demo2").innerHTML; 
+    var res2 = str2.replace("Microsoft","Peggy_test"); //Microsoft 被 Peggy_test 字串取代
+    document.getElementById("demo2").innerHTML = res2;
+
+}
+
+function myFunction2() {
+    var str3 = document.getElementById("input2Num").innerHTML;  
+    var res3 = str3.replace(str3, "取代別人的文字"); //全部取代 str3 的內容
+    // for (i=0; i<str3.length; i++){
+        var res2 = str3.replace("1","一"); // 一234 
+        res2 = str3.replace("2","二"); // 一二34 
+        res2 = str3.replace("3","三"); // 一二三4 
+        res2 = str3.replace("4","四"); // 一二三四
+    // }
+
+
+    //從字串開頭一個一個檢查，當第一個數字為1則輸出為壹，檢查到最後都沒了，就break;
+    document.getElementById("input2Num").innerHTML = res2;
+    result2.innerHTML =(res2);
+
+}
+
+    
+</script>
+
+<h3>輸入輸出測試</h3>
+<span>請輸入數字:</span>
+<input type="number" id="inputNum"/>
+<input type="button" id="submit" value="送出" onclick="action()"/>
+<br>
+<span>印出處: </span>
+<span id="result"></span>
+<hr>
+
+<h3>轉換字元測試1(str.replace)</h3>
+<p>Click the button to replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+<p id="demo">Visit Microsoft!</p>
+<p id="demo2">Visit Microsoft!</p>
+<button onclick="myFunction()">Try it</button>
+<hr>
+
+<h3>轉換字元測試2(str.replace)</h3>
+<span>請輸入數字:</span>
+<input type="number" id="input2Num"/>
+<input type="button" id="submit2" value="轉換" onclick="myFunction2()"/>
+<br>
+<span>轉換為: </span>
+<span id="result2"></span>
+<hr>

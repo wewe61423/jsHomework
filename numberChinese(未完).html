@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>數字轉換國字</title>
+</head>
+<body>
+    <p style="font-family:Microsoft JhengHei; font-size:22px; font-weight:bold;"><font color="#008B8B">阿拉伯數字轉換為國字數字</font></p>
+    <span style="font-family:Microsoft JhengHei;">請輸入任意阿拉伯數字 </span>
+    <input type="number" id="inputNum" />
+    <input type="button" id="submitNum" value="送出" onclick="action()" />
+    <br><br>
+    <span>印出處: </span>
+    <span id="result" style="font-family:Microsoft JhengHei; color:deeppink"></span>
+
+
+    <script>
+        function action(){
+        let inputNum = document.getElementById('inputNum').value;
+        result.innerHTML =(inputNum);
+        let str = "123"
+        var res = str.replace(str,"W3Schools");
+        
+        inputNum = parseInt(inputNum); //將字串轉為數字
+
+        switch (!inputNum == null){ 
+            case 1:
+            result.innerHTML = "壹";
+        
+            case 2:
+            result.innerHTML = "貳";
+            
+            case 3:
+            result.innerHTML = "叁";
+            
+            case 4:
+            result.innerHTML = "肆";
+            
+        }
+        let res2 = str2.replace("1","一");  // 一234 
+        res2 = res2.replace("2","二");      // 一二34 
+        res2 = res2.replace("3","三");      // 一二三4 
+        res2 = res2.replace("4","四");      // 一二三四
+
+
+        } //function action()的結尾
+
+        function changeNum(){               
+        
+
+    
+    }
+    
+    
+    </script>    
+    
+
+
+</body>
+</html>

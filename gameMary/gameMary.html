@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="gameMary.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水果樂園麻仔台</title>
+    <style>
+        .container{
+            margin: 0; 
+            padding: 0; 
+            height: 100%;
+            /* background-color: #504d4d; */
+            padding:15px 20px;
+            font-family:Microsoft JhengHei;
+            background-image:url('https://marketplace.canva.com/MAC7y3dBMxk/1/0/thumbnail_large-5/canva-minimalist-autumn-quote-desktop-wallpaper-MAC7y3dBMxk.jpg');
+            background-attachment:fixed;
+            background-size:cover;
+    }
+        #gameTable{
+            margin-left:auto;   
+            margin-right:auto;
+            text-align: center;
+            color: #ff7f50;
+            border-collapse:separate;
+            border-spacing:0;
+        }
+        
+        #gameTable td{
+            border:2px #cccccc solid ;
+            height: 60px;
+            width: 90px;
+            /* border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px; */
+        }
+
+        #gameTable td:first-child{
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        #gameTable td:last-child{
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        #gameTable .noborder{
+            border-style: none !important;
+        }
+
+        #h2Title{
+            color: #ff7f50;
+            align-content: center;
+            text-align: center;
+        }
+
+        #startBt{
+            border-radius: 6px;
+            background-color: #e5bd8f;
+            font-family:Microsoft JhengHei;
+            width:80px;
+            height:30px;
+            font-weight: bolder;
+        }
+        
+        #author{
+            text-align: center;  
+            color:#ffffff; 
+            opacity:0.1;
+        }
+        
+        
+    html, body{
+        margin: 0;
+        height: 100%;
+        
+    }
+    *{
+        margin: 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="h2Title">麻仔台練習實作</h2>
+        <br>
+        <table id="gameTable" >
+            <tr>
+                <td class="game">
+                    Orange
+                </td>
+                <td class="game">
+                    Apple
+                </td>
+                <td class="game">
+                    Grape
+                </td>
+                <td class="game">
+                    777
+                </td>
+                <td class="game">
+                    Ring
+                </td>
+                <td class="game">
+                    BARBARBAR
+                </td>
+                <td class="game">
+                    Star
+                </td>
+
+            </tr>
+            <tr>
+                <td class="game">
+                    Grape
+                </td>
+                <td colspan="5" rowspan="2" class="noborder">
+                    <span>恭喜獲得: </span>
+                    <span id="score" style="color: aquamarine"></span>
+                </td>
+                <td class="game">
+                    Apple
+                </td>
+            </tr>
+            <tr>
+                <td class="game">
+                    777
+                </td>
+                <td class="game">
+                    Star
+                </td>
+            </tr>
+            <tr>
+                <td class="game">
+                    Ring
+                </td>
+                <td class="game">
+                    Orange
+                </td>
+                <td class="game">
+                    777
+                </td>
+                <td class="game">
+                    BARBARBAR
+                </td>
+                <td class="game">
+                    Grape
+                </td>
+                <td class="game">
+                    Stars
+                </td>
+                <td class="game">
+                    Apples
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" rowspan="1" class="noborder">
+                    <input type="button" id="startBt" value="開始" onclick="doThing()"/>
+                </td>
+            </tr>
+        </table>
+        <p id="author">2019 by Peggy_Chen</p>
+        
+
+
+    </div>
+    
+</body>
+</html>

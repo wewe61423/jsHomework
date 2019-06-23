@@ -1,0 +1,65 @@
+<script>
+    //1英文9數字 > 身分證字號
+    function idAction(){
+    let a = ["A","B","C","D","E","F","G","H","I","J","K","M","N","O","P","Q","T","U","V","w","X","Z"];  
+    //L,R,S,Y 代碼已停用
+    let idNum = parseInt(Math.random()*a.length);   //亂數產生英文
+    let num1 = parseInt(Math.random()*2+1);         //第一碼需要為數字 1 or 2
+    let num2 = parseInt(Math.random()*8);           //第二碼至第九碼需為數字 1 ~ 9
+    let num3 = parseInt(Math.random()*8);
+    let num4 = parseInt(Math.random()*8);
+    let num5 = parseInt(Math.random()*8);
+    let num6 = parseInt(Math.random()*8);
+    let num7 = parseInt(Math.random()*8);
+    let num8 = parseInt(Math.random()*8);
+    let num9 = parseInt(Math.random()*8);
+    
+    document.getElementById('outPutId').value = a[idNum] + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+}
+    function cityAction(){
+        let cityPrint = city.selectedIndex;  //已選擇 selet 的 index 為多少
+        let idNum;   //亂數產生英文
+        switch (cityPrint){ //將 select 的加減乘除進行個別輸出
+            case 0:
+                let a = ["A","B","C","D","E","F","G","H","I","J","K","M","N","O","P","Q","T","U","V","W","X","Z"]; 
+                idNum = parseInt(Math.random()*a.length);   //亂數產生英文
+                idNum = a[idNum];
+                break;
+            case 1:
+                idNum = "A";
+                break;
+            case 2:
+                idNum = "B";
+                break;    
+            case 3:
+                idNum = "C";
+                break;    
+            case 4:
+                idNum = "D";
+                break;     
+        }
+        let num1 = parseInt(Math.random()*2+1);         //第一碼需要為數字 1 or 2
+        let num2 = parseInt(Math.random()*8);           //第二碼至第九碼需為數字 1 ~ 9
+        let num3 = parseInt(Math.random()*8);
+        let num4 = parseInt(Math.random()*8);
+        let num5 = parseInt(Math.random()*8);
+        let num6 = parseInt(Math.random()*8);
+        let num7 = parseInt(Math.random()*8);
+        let num8 = parseInt(Math.random()*8);
+        let num9 = parseInt(Math.random()*8);
+        document.getElementById('outPutId').value = idNum + num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
+    
+    }
+</script>
+<p>測試身分證隨機產生器</p>
+<input type="text" id="outPutId" class="outPutId" value="身分證隨機產生的地方" /> 
+<select id="city">
+    <option>-不指定城市-</option>
+    <option>台北市</option>
+    <option>台中市</option>
+    <option>基隆市</option>
+    <option>台南市</option>
+</select>
+<input type="button" id="idRandomSubmin" class="idSubmin" value="隨機產生" onclick="cityAction()"/>
+<span id="result"></span>
+<hr>
