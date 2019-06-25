@@ -4,7 +4,7 @@ let i = 0, last, final;
 function doThing(){
     let game = document.getElementsByClassName("game");
     let game_length = game.length;
-    if (delay <= 50){     //設定秒數
+    if (delay <= 10){     //設定秒數
         doThing2();
         return;
     }
@@ -26,8 +26,10 @@ function doThing(){
 function doThing2(){
     let game = document.getElementsByClassName("game");
     let game_length = game.length;
-    if (delay >= 5000){    //設定秒數
+    if (delay >= 1200){    //設定秒數
+        console.log("game over");
         return;
+        
     }
     
     if(last != undefined){
@@ -101,9 +103,18 @@ function doThing2(){
     else if(i > 11) i--;
     else if(i == 11 || i == 9) i-= 2;
     setTimeout(doThing2, delay);
-    delay += delay/5;
-    //console.log(delay + " & 遊戲table位置: " + i);
+    delay += delay/10;
+    console.log(delay + " & 遊戲table位置: " + i);
 
-    document.getElementById("score").innerHTML=final; //印出最終分數    
+    if (delay >= 1200){    //設定秒數
+        console.log("game over");
+        document.getElementById("score").innerHTML="恭喜獲得" + final;          //印出最終分數 
+        document.getElementById("gameRestart").innerHTML="再玩一次吧～";    //遊戲結束後顯示在開始鍵下方
+        return;
+        
+    }
+    
+    document.getElementById("score").innerHTML=final;
+
 }
 
