@@ -4,14 +4,14 @@
     .subminNum{
         border-radius: 5px;
         background-color: #22ca92;
-        font-family:Microsoft JhengHei;
-        width:80px;
+        font-family:Microsoft JhengHei;       
         height:30px;
         font-weight: bolder;
+        font-size: 18px;
     }
     .bodyTitle{
         font-family:Microsoft JhengHei; 
-        font-size:22px; 
+        font-size:24px; 
         font-weight:bold;
         color: #22ca92;
     }
@@ -19,26 +19,32 @@
         border:2px #22ca92; 
         border-style:solid;
         empty-cells: show;
+        margin-left:auto;   
+        margin-right:auto;
     }
     .caption{
         font-family:Microsoft JhengHei;
+        font-size: 18px;
         color:#22ca92;
     }
     #result{
         font-family:Microsoft JhengHei; 
         font-weight:bold;
-        color:#3eb9df
+        font-size: 18px;
+        color:#e0ecf0;
     }
-    #content{
+    #container{
             margin: 0; 
             padding: 0; 
             height: 100%;
             background-color: #504d4d;
             padding:15px 20px;
+            text-align: center;
     }
+    
     #author{
             font-family:Microsoft JhengHei;
-            text-align: left;  
+            text-align: center;  
             color:#ffffff; 
             opacity:0.1;
     }
@@ -58,22 +64,23 @@
 </head>
 
 <body>
-    <div id="content">
+    <div id="container">
     <p class="bodyTitle">質數的判斷</p>
     <br>
     <table class="tableStyle" cellpadding="10">
         <tr>
             <td>
-                <span class="caption">請輸入任一數字 </span>
+                <span class="caption">請輸入任一數字:  </span>
                 <input type="number" id="inputNum" />
+            </td>
+            <td>
                 <input type="button" id="submitNum" class="subminNum" value="是否為質數" onclick="checkNum(this)" />
-                <br>
             </td>
         </tr>
         <tr>
             <td>
-            <span id="result" ></span>
-        </td>
+            <span id="result"></span>
+            </td>
         </tr>
     </table>
     <br>

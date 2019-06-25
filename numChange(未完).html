@@ -19,14 +19,22 @@
         }
         #inputNum{
             border-radius: 6px;
-            height: 25px;
+            height: 32px;
+            font-size: 20px;
         }
         #submit{
             border-radius: 6px;
             background-color: hsl(32, 62%, 73%);
-            width:50px;
-            height:30px;
+            width:60px;
+            height:32px;
             font-weight: bolder;
+            font-size: 18px;
+        }
+        #result{
+            font-size: 20px;
+        }
+        #resultTitle{
+            font-size: 20px;
         }
         html, body{
             height: 100%;
@@ -86,7 +94,8 @@
         <h2 id="h2Title">阿拉伯數字轉換國字</h2>
         <input type="number" id="inputNum" />
         <input type="button" id="submit" value="轉換" onclick="unitAction()"/><br><br>
-        轉換結果：<span id="result"></span>
+        <span id="resultTitle">轉換結果：</span>
+        <span id="result"></span>
     </div>  
 </body>
 </html>
